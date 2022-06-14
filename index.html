@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col"><h1>Books</h1></div>
+        <div class="col text-end my-auto">
+          <button
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#addBook"
+            onclick="addBookClicked()"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+      <table class="table table-hover table-striped table-success">
+        <thead class="table-light">
+          <tr>
+            <th>№</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+
+      <!-- Modal Edit Book -->
+      <div class="modal fade" id="editBook">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Edit Book</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" id="modal-body-edit"></div>
+            <div class="modal-footer" id="modal-footer-edit">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Add Book -->
+      <div class="modal fade" id="addBook">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Add Book</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-2">
+                  <label for="name" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control addBook"
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="author" class="form-label">Author</label>
+                  <input
+                    type="text"
+                    id="author"
+                    name="author"
+                    class="form-control addBook"
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="pages" class="form-label">Pages</label>
+                  <input
+                    type="number"
+                    id="pages"
+                    name="pages"
+                    class="form-control addBook"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary saveAddBook"
+                onclick="addBook()"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
